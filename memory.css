@@ -1,0 +1,93 @@
+/* style.css with flip animations, win popup and celebration */
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(-45deg, #ff9a9e, #ff9a9e, #ff9a9e,#ff9a9e);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  h1 {
+    font-size: 50px;    
+    margin-top: 30px;
+    color: #000000;
+  }
+  
+  #moves, #timer {
+    font-size: 20px;
+    margin: 10px;
+  }
+  
+  .game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-gap: 10px;
+    justify-content: center;
+    margin: 20px auto;
+  }
+  
+  .card {
+    width: 100px;
+    height: 100px;
+    background: #333;
+    color: #fff;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 8px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+  
+  .card.flipped {
+    background: #50c08f;
+    transform: rotateY(180deg);
+  }
+  
+  #restart {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  #win-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    font-size: 24px;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
